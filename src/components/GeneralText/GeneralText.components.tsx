@@ -11,7 +11,7 @@ import styles from './GeneralText.styles';
  * @param {GeneralTextVariantsTypes} variant - The variant type for the text style.
  * @returns {TextStyle} The corresponding text style.
  */
-const getTextStyle = (variant: GeneralTextVariantsTypes): TextStyle => {
+const _getTextStyle = (variant: GeneralTextVariantsTypes): TextStyle => {
   return styles[variant];
 };
 
@@ -28,7 +28,7 @@ const GeneralText: FC<GeneralTextProps> = ({
   children,
   ...props
 }: GeneralTextProps): JSX.Element => (
-  <Text {...getTextStyle(variant)} {...props}>
+  <Text {..._getTextStyle(variant)} {...props}>
     {children}
   </Text>
 );

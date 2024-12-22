@@ -9,7 +9,6 @@ export type ButtonVariantTypes =
 export type ButtonProps = ButtonPropsRN & {
   variant: ButtonVariantTypes;
   icon?: ReactElement;
-  label?: string;
   iconRight?: ReactElement;
 };
 

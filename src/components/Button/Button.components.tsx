@@ -1,7 +1,20 @@
-import React, {type FC} from 'react';
+import React, {ReactElement, type FC} from 'react';
+import {Pressable} from 'react-native';
 
 import type {ButtonProps} from '../../@types';
-import {BUTTON_VARIANTS} from '../../constants';
+import {BUTTON_VARIANTS, GENERAL_TEXT_VARIANTS} from '../../constants';
+
+import GeneralText from '../GeneralText/GeneralText.components';
+
+/**
+ * Renders the title of the button using the GeneralText component.
+ *
+ * @param {string} title - The text to be displayed as the button title.
+ * @returns {ReactElement} The rendered GeneralText component containing the title.
+ */
+const _renderTitle = (title: string): ReactElement => (
+  <GeneralText variant={GENERAL_TEXT_VARIANTS.BUTTON}>{title}</GeneralText>
+);
 
 /**
  * A customizable button component that can display a label and an icon.
@@ -14,14 +27,15 @@ import {BUTTON_VARIANTS} from '../../constants';
  * @returns {JSX.Element} The rendered button component.
  */
 const Button: FC<ButtonProps> = ({
-  label,
+  title,
   variant,
   iconRight,
   icon,
+  ...props
 }: ButtonProps): JSX.Element => (
-  <button>
-    {variant === BUTTON_VARIANTS.ICON ? icon : label} {iconRight}
-  </button>
+  <Pressable {...props}>
+    {variant === BUTTON_VARIANTS.ICON ? icon : _renderTitle(title)} {iconRight}
+  </Pressable>
 );
 
 export default Button;
