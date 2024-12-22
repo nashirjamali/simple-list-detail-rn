@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Text, type TextStyle} from 'react-native';
+import {StyleSheet, Text, type TextStyle} from 'react-native';
 
 import type {GeneralTextProps, GeneralTextVariantsTypes} from '../../@types';
 
@@ -21,16 +21,22 @@ const _getTextStyle = (variant: GeneralTextVariantsTypes): TextStyle => {
  * @param {GeneralTextProps} props - The properties for the GeneralText component.
  * @param {GeneralTextVariantsTypes} props.variant - The variant type for styling.
  * @param {React.ReactNode} props.children - The content to be displayed within the text.
+ * @param {StyleProp<TextStyle>} [props.style] - Additional styles to apply to the text.
  * @returns {JSX.Element} The rendered text component.
  */
 const GeneralText: FC<GeneralTextProps> = ({
   variant,
   children,
+  style,
   ...props
-}: GeneralTextProps): JSX.Element => (
-  <Text style={_getTextStyle(variant)} {...props}>
-    {children}
-  </Text>
-);
+}: GeneralTextProps): JSX.Element => {
+  const combinedStyle = StyleSheet.flatten([_getTextStyle(variant), style]);
+
+  return (
+    <Text style={combinedStyle} {...props}>
+      {children}
+    </Text>
+  );
+};
 
 export default GeneralText;
