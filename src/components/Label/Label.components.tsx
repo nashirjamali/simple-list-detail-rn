@@ -1,4 +1,4 @@
-import React, {FC, ReactElement} from 'react';
+import React, {type FC, type ReactElement} from 'react';
 import {View} from 'react-native';
 
 import type {LabelProps} from '../../@types';
@@ -8,13 +8,13 @@ import {COLORS, GENERAL_TEXT_VARIANTS, LABEL_VARIANTS} from '../../constants';
 import styles from './Label.styles';
 
 /**
- * Renders a label with a specific style when the check state is active.
+ * Renders a label with a pending style.
  *
  * @param {string} text - The text to be displayed in the label.
- * @returns {ReactElement} The rendered label component for the check state.
+ * @returns {ReactElement} The rendered label component for the pending state.
  */
-const _renderOnCheck = (text: string): ReactElement => (
-  <View style={styles.containerOnCheck}>
+const _renderPending = (text: string): ReactElement => (
+  <View style={styles.containerPending}>
     <GeneralText
       variant={GENERAL_TEXT_VARIANTS.NORMAL}
       style={{textAlign: 'center', fontWeight: 'bold'}}>
@@ -49,8 +49,8 @@ const _renderSuccess = (text: string): ReactElement => (
  */
 const _mappingVariant = ({text, variant}: LabelProps): ReactElement => {
   switch (variant) {
-    case LABEL_VARIANTS.ON_CHECK:
-      return _renderOnCheck(text);
+    case LABEL_VARIANTS.PENDING:
+      return _renderPending(text);
 
     case LABEL_VARIANTS.SUCCESS:
       return _renderSuccess(text);

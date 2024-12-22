@@ -5,7 +5,7 @@ import type {LabelStyles} from '../../@types';
 import {COLORS} from '../../constants';
 
 const styles: LabelStyles = StyleSheet.create({
-  containerOnCheck: {
+  containerPending: {
     borderRadius: 10,
     padding: 10,
     borderWidth: 2,

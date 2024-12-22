@@ -1,14 +1,27 @@
 import React from 'react';
 import {SafeAreaView, View} from 'react-native';
 
-import {Button, GeneralText, Label, Layout, TextInput} from '../../components';
+import {
+  Button,
+  Card,
+  GeneralText,
+  Label,
+  Layout,
+  TextInput,
+} from '../../components';
 
 const TransactionList = () => {
   return (
     <Layout>
       <TextInput placeholder="Cari nama, bank, atau nominal" />
-      <Label variant="onCheck" text="Pengecekan" />
-      <Label variant="success" text="Berhasil" />
+      <Card
+        amount={1000}
+        beneficiaryBank="bsi"
+        beneficiaryName="test"
+        completedAt="2024-12-22 15:16:55"
+        senderBank="bni"
+        status="pending"
+      />
     </Layout>
   );
 };

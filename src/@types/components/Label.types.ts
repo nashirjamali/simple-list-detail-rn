@@ -11,6 +11,6 @@ export type LabelProps = {
 };
 
 export type LabelStyles = {
-  containerOnCheck: ViewStyle;
+  containerPending: ViewStyle;
   containerSuccess: ViewStyle;
 };
