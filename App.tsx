@@ -1,13 +1,16 @@
 import React from 'react';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 import Router from './src/router/Router';
 
 function App(): JSX.Element {
   return (
-    <NavigationContainer theme={DefaultTheme}>
-      <Router />
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer theme={DefaultTheme}>
+        <Router />
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
 

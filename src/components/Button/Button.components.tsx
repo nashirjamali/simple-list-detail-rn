@@ -1,5 +1,5 @@
 import React, {ReactElement, type FC} from 'react';
-import {Pressable} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 
 import type {ButtonProps} from '../../@types';
 import {BUTTON_VARIANTS, GENERAL_TEXT_VARIANTS} from '../../constants';
@@ -33,9 +33,9 @@ const Button: FC<ButtonProps> = ({
   icon,
   ...props
 }: ButtonProps): JSX.Element => (
-  <Pressable {...props}>
-    {variant === BUTTON_VARIANTS.ICON ? icon : _renderTitle(title)} {iconRight}
-  </Pressable>
+  <TouchableOpacity {...props}>
+    {variant === BUTTON_VARIANTS.ICON ? icon : _renderTitle(title)}
+  </TouchableOpacity>
 );
 
 export default Button;

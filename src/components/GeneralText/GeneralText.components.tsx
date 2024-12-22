@@ -28,7 +28,7 @@ const GeneralText: FC<GeneralTextProps> = ({
   children,
   ...props
 }: GeneralTextProps): JSX.Element => (
-  <Text {..._getTextStyle(variant)} {...props}>
+  <Text style={_getTextStyle(variant)} {...props}>
     {children}
   </Text>
 );
