@@ -4,4 +4,5 @@ export const COLORS = {
   SUCCESS: '#55B585',
   GRAY: '#999999',
   WHITE: '#FFFFFF',
+  SLATE: '#F5F9F8',
 } as const;
