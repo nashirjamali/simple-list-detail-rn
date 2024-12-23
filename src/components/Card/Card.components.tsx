@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 
 import type {CardProps, CardVariantsType} from '../../@types';
 import {
@@ -11,7 +11,7 @@ import {formatDateToIndonesian, formatToIDR} from '../../utils';
 
 import Label from '../Label/Label.components';
 import GeneralText from '../GeneralText/GeneralText.components';
-import {ArrowRightIcon} from '../Icons/Icons.components';
+import {ArrowRightIcon, DotIcon} from '../Icons/Icons.components';
 
 import styles from './Card.styles';
 
@@ -90,7 +90,7 @@ const _renderContent = ({
         <GeneralText variant={GENERAL_TEXT_VARIANTS.NORMAL}>
           {formatToIDR(amount)}
         </GeneralText>
-        <GeneralText variant={GENERAL_TEXT_VARIANTS.HEADER}>.</GeneralText>
+        <DotIcon />
         <GeneralText variant={GENERAL_TEXT_VARIANTS.NORMAL}>
           {formatDateToIndonesian(completedAt)}
         </GeneralText>
@@ -107,10 +107,10 @@ const _renderContent = ({
  * @returns {JSX.Element} The rendered card component.
  */
 const Card: FC<CardProps> = (props: CardProps): JSX.Element => (
-  <View style={styles.container}>
+  <TouchableOpacity style={styles.container}>
     {_renderCardStrip(props.status)}
     {_renderContent(props)}
-  </View>
+  </TouchableOpacity>
 );
 
 export default Card;

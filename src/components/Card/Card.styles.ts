@@ -36,11 +36,12 @@ const styles: CardStyles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     gap: 5,
+    alignItems: 'center'
   },
   amountAndDate: {
     display: 'flex',
     flexDirection: 'row',
-    gap: 5,
+    alignItems: 'center'
   },
 });
 
