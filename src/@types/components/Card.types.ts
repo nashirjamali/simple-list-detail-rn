@@ -18,4 +18,7 @@ export type CardStyles = {
   container: ViewStyle;
   pending: ViewStyle;
   success: ViewStyle;
+  contentContainer: ViewStyle;
+  bankTransfer: ViewStyle;
+  amountAndDate: ViewStyle;
 };

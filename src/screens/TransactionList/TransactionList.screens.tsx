@@ -22,6 +22,14 @@ const TransactionList = () => {
         senderBank="bni"
         status="pending"
       />
+      <Card
+        amount={1000}
+        beneficiaryBank="bsi"
+        beneficiaryName="test"
+        completedAt="2024-12-22 15:16:55"
+        senderBank="bni"
+        status="success"
+      />
     </Layout>
   );
 };

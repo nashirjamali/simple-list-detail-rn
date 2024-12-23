@@ -4,5 +4,15 @@ import Layout from './Layout/Layout.component';
 import TextInput from './TextInput/TextInput.component';
 import Label from './Label/Label.components';
 import Card from './Card/Card.components';
+import {ArrowDownIcon, ArrowRightIcon} from './Icons/Icons.components';
 
-export {GeneralText, Button, Layout, TextInput, Label, Card};
+export {
+  GeneralText,
+  Button,
+  Layout,
+  TextInput,
+  Label,
+  Card,
+  ArrowDownIcon,
+  ArrowRightIcon,
+};

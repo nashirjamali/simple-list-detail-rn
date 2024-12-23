@@ -1,5 +1,7 @@
 import {StyleSheet} from 'react-native';
-import {CardStyles} from '../../@types';
+
+import type {CardStyles} from '../../@types';
+
 import {COLORS} from '../../constants';
 
 const styles: CardStyles = StyleSheet.create({
@@ -10,13 +12,36 @@ const styles: CardStyles = StyleSheet.create({
     flexDirection: 'row',
     width: '100%',
   },
+  contentContainer: {
+    padding: 20,
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
   pending: {
     width: 10,
     backgroundColor: COLORS.BRAND,
     borderTopLeftRadius: 20,
     borderBottomLeftRadius: 20,
   },
-  success: {},
+  success: {
+    width: 10,
+    backgroundColor: COLORS.SUCCESS,
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 20,
+  },
+  bankTransfer: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 5,
+  },
+  amountAndDate: {
+    display: 'flex',
+    flexDirection: 'row',
+    gap: 5,
+  },
 });
 
 export default styles;
