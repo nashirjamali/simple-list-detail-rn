@@ -2,7 +2,6 @@ import React, {FC} from 'react';
 import {TextInput as TextInputRN, View} from 'react-native';
 
 import {TextInputProps} from '../../@types';
-import {BUTTON_VARIANTS} from '../../constants';
 
 import Button from '../Button/Button.components';
 
@@ -22,6 +21,7 @@ const TextInput: FC<TextInputProps> = ({
   placeholder,
   value,
   onChangeText,
+  buttonComponentProps,
   ...props
 }: TextInputProps): JSX.Element => (
   <View style={styles.container}>
@@ -32,7 +32,7 @@ const TextInput: FC<TextInputProps> = ({
       value={value}
       {...props}
     />
-    <Button title="URUTKAN" variant={BUTTON_VARIANTS.NORMAL} />
+    {buttonComponentProps && <Button {...buttonComponentProps} />}
   </View>
 );
 

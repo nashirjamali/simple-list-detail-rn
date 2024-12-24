@@ -11,9 +11,10 @@ import {formatDateToIndonesian, formatToIDR} from '../../utils';
 
 import Label from '../Label/Label.components';
 import GeneralText from '../GeneralText/GeneralText.components';
-import {ArrowRightIcon, DotIcon} from '../Icons/Icons.components';
 
 import styles from './Card.styles';
+import ArrowRightIcon from '../Icons/ArrowRightIcon.icons';
+import DotIcon from '../Icons/DotIcon.icons';
 
 /**
  * Renders a colored strip on the card based on the status.

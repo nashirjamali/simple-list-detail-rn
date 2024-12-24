@@ -4,7 +4,10 @@ import Layout from './Layout/Layout.component';
 import TextInput from './TextInput/TextInput.component';
 import Label from './Label/Label.components';
 import Card from './Card/Card.components';
-import {ArrowDownIcon, ArrowRightIcon} from './Icons/Icons.components';
+import ArrowDownIcon from './Icons/ArrowDownIcon.icons';
+import ArrowRightIcon from './Icons/ArrowRightIcon.icons';
+import DotIcon from './Icons/DotIcon.icons';
+import DynamicModal from './Modal/Modal.components';
 
 export {
   GeneralText,
@@ -15,4 +18,6 @@ export {
   Card,
   ArrowDownIcon,
   ArrowRightIcon,
+  DotIcon,
+  DynamicModal,
 };

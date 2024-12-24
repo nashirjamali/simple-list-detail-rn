@@ -7,10 +7,11 @@ const {WHITE} = COLORS;
 
 const styles: ButtonStyles = StyleSheet.create({
   container: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: 8,
+    flexDirection: 'row',
+    gap: 2,
     backgroundColor: WHITE,
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 

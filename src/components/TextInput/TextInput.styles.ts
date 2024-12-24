@@ -7,7 +7,10 @@ const styles: TextInputStyles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.WHITE,
     borderRadius: 10,
-    padding: 5,
+    paddingRight: 10,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 5,
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
@@ -15,9 +18,7 @@ const styles: TextInputStyles = StyleSheet.create({
     gap: 5,
     width: '100%',
   },
-  input: {
-    width: '70%',
-  },
+  input: {},
 });
 
 export default styles;

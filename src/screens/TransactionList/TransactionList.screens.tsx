@@ -1,9 +1,22 @@
 import React, {useState} from 'react';
 import {ScrollView, View} from 'react-native';
 
-import {Card, GeneralText, Layout, TextInput} from '../../components';
-import {useFetch, useSearchTransactions} from '../../hooks';
-import {API_URL, GENERAL_TEXT_VARIANTS} from '../../constants';
+import {
+  ArrowDownIcon,
+  Button,
+  Card,
+  DynamicModal,
+  GeneralText,
+  Layout,
+  TextInput,
+} from '../../components';
+import {useFetch, useSearchTransactions, useSort} from '../../hooks';
+import {
+  API_URL,
+  BUTTON_VARIANTS,
+  COLORS,
+  GENERAL_TEXT_VARIANTS,
+} from '../../constants';
 import type {Transactions} from '../../@types';
 
 import styles from './TransactionList.styles';
@@ -74,18 +87,50 @@ const _renderError = (error: string): JSX.Element => (
 const TransactionList = (): JSX.Element => {
   const {data, error, loading} = useFetch<Transactions>(API_URL);
   const [searchTerm, setSearchTerm] = useState('');
+  const [modalVisible, setModalVisible] = useState(false);
+  const [sortOption, setSortOption] = useState('URUTKAN');
+
+  const options = [
+    {label: 'URUTKAN', value: 'URUTKAN'},
+    {label: 'Nama A-Z', value: 'A-Z'},
+    {label: 'Nama Z-A', value: 'Z-A'},
+    {label: 'Tanggal Terbaru', value: 'Tanggal Terbaru'},
+    {label: 'Tanggal Terlama', value: 'Tanggal Terlama'},
+  ];
+
   const filteredData = useSearchTransactions(data, searchTerm);
+  const sortedData = useSort(filteredData!, sortOption);
+
+  const handleSortSelect = (value: string) => {
+    setSortOption(value);
+  };
 
   return (
     <Layout style={styles.container}>
+      <DynamicModal
+        visible={modalVisible}
+        title="Sort By"
+        options={options}
+        onClose={() => setModalVisible(false)}
+        onSelect={handleSortSelect}
+      />
+
       <TextInput
         placeholder="Cari nama, bank, atau nominal"
         value={searchTerm}
         onChangeText={setSearchTerm}
+        buttonComponentProps={{
+          title: sortOption,
+          variant: BUTTON_VARIANTS.NORMAL,
+          iconRight: (
+            <ArrowDownIcon color={COLORS.BRAND} width={20} height={20} />
+          ),
+          onPress: () => setModalVisible(true),
+        }}
       />
       {loading && _renderLoading()}
       {error && _renderError(error)}
-      {!loading && !error && _renderList(filteredData)}
+      {!loading && !error && _renderList(sortedData)}
     </Layout>
   );
 };

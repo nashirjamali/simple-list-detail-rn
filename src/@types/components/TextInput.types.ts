@@ -1,6 +1,10 @@
 import type {TextInputProps as TextInputPropsRN, ViewStyle} from 'react-native';
 
-export type TextInputProps = TextInputPropsRN & {};
+import {ButtonProps} from './Button.types';
+
+export type TextInputProps = TextInputPropsRN & {
+  buttonComponentProps?: ButtonProps;
+};
 
 export type TextInputStyles = {
   container: ViewStyle;
