@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ScrollView, View} from 'react-native';
 
 import {Card, GeneralText, Layout, TextInput} from '../../components';
-import useFetch from '../../hooks/useFetch';
+import {useFetch, useSearchTransactions} from '../../hooks';
 import {API_URL, GENERAL_TEXT_VARIANTS} from '../../constants';
 import type {Transactions} from '../../@types';
 
@@ -73,13 +73,19 @@ const _renderError = (error: string): JSX.Element => (
  */
 const TransactionList = (): JSX.Element => {
   const {data, error, loading} = useFetch<Transactions>(API_URL);
+  const [searchTerm, setSearchTerm] = useState('');
+  const filteredData = useSearchTransactions(data, searchTerm);
 
   return (
     <Layout style={styles.container}>
-      <TextInput placeholder="Cari nama, bank, atau nominal" />
+      <TextInput
+        placeholder="Cari nama, bank, atau nominal"
+        value={searchTerm}
+        onChangeText={setSearchTerm}
+      />
       {loading && _renderLoading()}
       {error && _renderError(error)}
-      {!loading && !error && _renderList(data)}
+      {!loading && !error && _renderList(filteredData)}
     </Layout>
   );
 };
