@@ -20,13 +20,13 @@ const styles: CardStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
   },
-  pending: {
+  PENDING: {
     width: 10,
     backgroundColor: COLORS.BRAND,
     borderTopLeftRadius: 20,
     borderBottomLeftRadius: 20,
   },
-  success: {
+  SUCCESS: {
     width: 10,
     backgroundColor: COLORS.SUCCESS,
     borderTopLeftRadius: 20,
@@ -36,12 +36,12 @@ const styles: CardStyles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     gap: 5,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   amountAndDate: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 });
 

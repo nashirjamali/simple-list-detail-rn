@@ -8,23 +8,23 @@ const {BLACK, BRAND, GRAY} = COLORS;
 const styles: GeneralTextStyles = StyleSheet.create({
   button: {
     color: BRAND,
-    fontSize: 18,
+    fontSize: 14,
   },
   header: {
     color: BLACK,
-    fontSize: 20,
+    fontSize: 16,
     fontWeight: 'bold',
   },
   input: {
     color: GRAY,
-    fontSize: 16,
+    fontSize: 14,
   },
   label: {
-    fontSize: 16,
+    fontSize: 12,
   },
   normal: {
     color: BLACK,
-    fontSize: 16,
+    fontSize: 14,
   },
 });
 

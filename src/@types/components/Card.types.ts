@@ -16,8 +16,8 @@ export type CardProps = {
 
 export type CardStyles = {
   container: ViewStyle;
-  pending: ViewStyle;
-  success: ViewStyle;
+  PENDING: ViewStyle;
+  SUCCESS: ViewStyle;
   contentContainer: ViewStyle;
   bankTransfer: ViewStyle;
   amountAndDate: ViewStyle;
