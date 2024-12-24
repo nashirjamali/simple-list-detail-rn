@@ -1,4 +1,3 @@
-export const CARD_VARIANTS = {
-  PENDING: 'pending',
-  SUCCESS: 'success',
-} as const;
+import {TRANSACTION_STATUS} from '../Model.constants';
+
+export const CARD_VARIANTS = TRANSACTION_STATUS;

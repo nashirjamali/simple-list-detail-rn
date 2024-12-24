@@ -1,4 +1,3 @@
-export const LABEL_VARIANTS = {
-  PENDING: 'pending',
-  SUCCESS: 'success',
-} as const;
+import {TRANSACTION_STATUS} from '../Model.constants';
+
+export const LABEL_VARIANTS = TRANSACTION_STATUS;

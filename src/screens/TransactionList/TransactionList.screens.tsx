@@ -9,27 +9,32 @@ import {
   Layout,
   TextInput,
 } from '../../components';
+import useFetch from '../../hooks/useFetch';
+import {API_URL, GENERAL_TEXT_VARIANTS} from '../../constants';
+import {Transactions} from '../../@types';
 
 const TransactionList = () => {
+  const {data, error, loading} = useFetch<Transactions>(API_URL);
+
+  if (loading) {
+    return (
+      <GeneralText variant={GENERAL_TEXT_VARIANTS.NORMAL}>
+        Loading...
+      </GeneralText>
+    );
+  }
+
+  if (error) {
+    return (
+      <GeneralText variant={GENERAL_TEXT_VARIANTS.NORMAL}>
+        Error: {error}
+      </GeneralText>
+    );
+  }
+
   return (
     <Layout>
       <TextInput placeholder="Cari nama, bank, atau nominal" />
-      <Card
-        amount={1000}
-        beneficiaryBank="bsi"
-        beneficiaryName="test"
-        completedAt="2024-12-22 15:16:55"
-        senderBank="bni"
-        status="pending"
-      />
-      <Card
-        amount={1000}
-        beneficiaryBank="bsi"
-        beneficiaryName="test"
-        completedAt="2024-12-22 15:16:55"
-        senderBank="bni"
-        status="success"
-      />
     </Layout>
   );
 };
