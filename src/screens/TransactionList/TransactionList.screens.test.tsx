@@ -1,9 +1,12 @@
-import React, {ProviderProps} from 'react';
-import {render, fireEvent, waitFor} from '@testing-library/react-native';
+import React from 'react';
+import type {TextProps, ViewProps} from 'react-native';
+import {render, fireEvent} from '@testing-library/react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import TransactionList from './TransactionList.screens';
+
 import {TransactionContext} from '../TransactionDetails/TransactionDetails.screens';
-import {TextProps, ViewProps} from 'react-native';
+
+import TransactionList from './TransactionList.screens';
+
 import {CardProps, DynamicModalProps, TextInputProps} from '../../@types';
 
 jest.mock('../../hooks', () => ({
