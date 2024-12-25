@@ -7,7 +7,6 @@ const styles: LayoutStyles = StyleSheet.create({
   container: {
     padding: 10,
     backgroundColor: COLORS.SLATE,
-    minHeight: '100%',
   },
 });
 

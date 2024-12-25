@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {ScrollView, View} from 'react-native';
+import {ScrollView, TouchableOpacity, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
 
 import {
   ArrowDownIcon,
-  Button,
   Card,
   DynamicModal,
   GeneralText,
@@ -16,8 +17,11 @@ import {
   BUTTON_VARIANTS,
   COLORS,
   GENERAL_TEXT_VARIANTS,
+  ROUTES,
 } from '../../constants';
-import type {Transactions} from '../../@types';
+import type {RootStackParamList, Transaction, Transactions} from '../../@types';
+
+import {useTransactionContext} from '../TransactionDetails/TransactionDetails.screens';
 
 import styles from './TransactionList.styles';
 
@@ -25,35 +29,28 @@ import styles from './TransactionList.styles';
  * Renders a list of transactions.
  *
  * @param {Transactions | null} data - The transaction data to be displayed.
+ * @param {function} onSelect - Callback function to handle transaction selection.
  * @returns {JSX.Element} The rendered list of transactions.
  */
-const _renderList = (data: Transactions | null): JSX.Element => (
+const _renderList = (
+  data: Transactions | null,
+  onSelect: (transaction: Transaction) => void,
+): JSX.Element => (
   <ScrollView>
     <View style={styles.containerList}>
       {data &&
-        Object.entries(data).map(
-          ([
-            key,
-            {
-              amount,
-              beneficiary_bank,
-              beneficiary_name,
-              completed_at,
-              sender_bank,
-              status,
-            },
-          ]) => (
-            <Card
-              key={key}
-              amount={amount}
-              beneficiaryBank={beneficiary_bank}
-              beneficiaryName={beneficiary_name}
-              completedAt={completed_at}
-              senderBank={sender_bank}
-              status={status}
-            />
-          ),
-        )}
+        Object.entries(data).map(([key, transaction]) => (
+          <Card
+            key={key}
+            amount={transaction.amount}
+            beneficiaryBank={transaction.beneficiary_bank}
+            beneficiaryName={transaction.beneficiary_name}
+            completedAt={transaction.completed_at}
+            senderBank={transaction.sender_bank}
+            status={transaction.status}
+            onPress={() => onSelect(transaction)}
+          />
+        ))}
     </View>
   </ScrollView>
 );
@@ -80,6 +77,47 @@ const _renderError = (error: string): JSX.Element => (
 );
 
 /**
+ * Renders selectable options for sorting transactions.
+ *
+ * @param {function} onSelect - Callback function to handle option selection.
+ * @param {function} onClose - Callback function to close the modal.
+ * @param {function} setSelectedValue - Function to set the selected value.
+ * @param {Array<{label: string, value: string}>} options - The options to display.
+ * @param {string} selectedValue - The currently selected value.
+ * @returns {JSX.Element[]} The rendered selectable options.
+ */
+const _renderSelectOption = (
+  onSelect: (value: string) => void,
+  onClose: () => void,
+  setSelectedValue: (value: string) => void,
+  options: {
+    label: string;
+    value: string;
+  }[],
+  selectedValue: string,
+): JSX.Element[] => {
+  const handleSelect = (value: string) => {
+    setSelectedValue(value);
+    onSelect(value);
+    onClose();
+  };
+
+  return options.map(option => (
+    <TouchableOpacity
+      key={option.value}
+      style={styles.option}
+      onPress={() => handleSelect(option.value)}>
+      <GeneralText variant={GENERAL_TEXT_VARIANTS.BUTTON}>
+        {option.label}
+      </GeneralText>
+      {selectedValue === option.value && (
+        <GeneralText variant={GENERAL_TEXT_VARIANTS.BUTTON}>●</GeneralText>
+      )}
+    </TouchableOpacity>
+  ));
+};
+
+/**
  * A component that displays a list of transactions.
  *
  * @returns {JSX.Element} The rendered transaction list component.
@@ -89,7 +127,6 @@ const TransactionList = (): JSX.Element => {
   const [searchTerm, setSearchTerm] = useState('');
   const [modalVisible, setModalVisible] = useState(false);
   const [sortOption, setSortOption] = useState('URUTKAN');
-
   const options = [
     {label: 'URUTKAN', value: 'URUTKAN'},
     {label: 'Nama A-Z', value: 'A-Z'},
@@ -98,6 +135,13 @@ const TransactionList = (): JSX.Element => {
     {label: 'Tanggal Terlama', value: 'Tanggal Terlama'},
   ];
 
+  const [selectedValue, setSelectedValue] = useState<string>(
+    options[0]?.value || '',
+  );
+
+  const navigation = useNavigation<StackNavigationProp<RootStackParamList>>();
+  const {setTransaction} = useTransactionContext();
+
   const filteredData = useSearchTransactions(data, searchTerm);
   const sortedData = useSort(filteredData!, sortOption);
 
@@ -105,15 +149,25 @@ const TransactionList = (): JSX.Element => {
     setSortOption(value);
   };
 
+  const handleSelectTransaction = (transaction: Transaction) => {
+    setTransaction(transaction);
+    navigation.navigate(ROUTES.TRANSACTION_DETAILS);
+  };
+
   return (
     <Layout style={styles.container}>
       <DynamicModal
         visible={modalVisible}
-        title="Sort By"
-        options={options}
-        onClose={() => setModalVisible(false)}
-        onSelect={handleSortSelect}
-      />
+        title="Urutkan"
+        onClose={() => setModalVisible(false)}>
+        {_renderSelectOption(
+          handleSortSelect,
+          () => setModalVisible(false),
+          setSelectedValue,
+          options,
+          selectedValue,
+        )}
+      </DynamicModal>
 
       <TextInput
         placeholder="Cari nama, bank, atau nominal"
@@ -130,7 +184,7 @@ const TransactionList = (): JSX.Element => {
       />
       {loading && _renderLoading()}
       {error && _renderError(error)}
-      {!loading && !error && _renderList(sortedData)}
+      {!loading && !error && _renderList(sortedData, handleSelectTransaction)}
     </Layout>
   );
 };

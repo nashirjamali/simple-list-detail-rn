@@ -11,7 +11,6 @@ import {formatDateToIndonesian, formatToIDR} from '../../utils';
 
 import Label from '../Label/Label.components';
 import GeneralText from '../GeneralText/GeneralText.components';
-
 import styles from './Card.styles';
 import ArrowRightIcon from '../Icons/ArrowRightIcon.icons';
 import DotIcon from '../Icons/DotIcon.icons';
@@ -36,10 +35,8 @@ const _renderLabel = (status: CardVariantsType): JSX.Element => {
   switch (status) {
     case CARD_VARIANTS.PENDING:
       return <Label text="Pengecekan" variant={LABEL_VARIANTS.PENDING} />;
-
     case CARD_VARIANTS.SUCCESS:
       return <Label text="Berhasil" variant={LABEL_VARIANTS.SUCCESS} />;
-
     default:
       return <Label text="Pengecekan" variant={LABEL_VARIANTS.PENDING} />;
   }
@@ -108,7 +105,7 @@ const _renderContent = ({
  * @returns {JSX.Element} The rendered card component.
  */
 const Card: FC<CardProps> = (props: CardProps): JSX.Element => (
-  <TouchableOpacity style={styles.container}>
+  <TouchableOpacity style={styles.container} onPress={props.onPress}>
     {_renderCardStrip(props.status)}
     {_renderContent(props)}
   </TouchableOpacity>

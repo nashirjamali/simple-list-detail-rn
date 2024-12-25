@@ -1,10 +1,8 @@
 import React, {FC} from 'react';
 import {TextInput as TextInputRN, View} from 'react-native';
 
-import {TextInputProps} from '../../@types';
-
+import type {ButtonProps, TextInputProps} from '../../@types';
 import Button from '../Button/Button.components';
-
 import styles from './TextInput.styles';
 
 /**
@@ -15,6 +13,7 @@ import styles from './TextInput.styles';
  * @param {string} props.placeholder - The placeholder text to display when the input is empty.
  * @param {string} props.value - The current value of the text input.
  * @param {function} props.onChangeText - Callback function that is called when the text input value changes.
+ * @param {ButtonProps} [props.buttonComponentProps] - Additional props to pass to the button component.
  * @returns {JSX.Element} The rendered TextInput component with an associated button.
  */
 const TextInput: FC<TextInputProps> = ({

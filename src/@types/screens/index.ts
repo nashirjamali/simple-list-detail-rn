@@ -1,1 +1,2 @@
-export * from './transactionlist.types';
+export * from './TransactionList.types';
+export * from './TransactionDetails.types'

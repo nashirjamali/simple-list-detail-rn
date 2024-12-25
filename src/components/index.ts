@@ -7,7 +7,8 @@ import Card from './Card/Card.components';
 import ArrowDownIcon from './Icons/ArrowDownIcon.icons';
 import ArrowRightIcon from './Icons/ArrowRightIcon.icons';
 import DotIcon from './Icons/DotIcon.icons';
-import DynamicModal from './Modal/Modal.components';
+import DynamicModal from './DynamicModal/DynamicModal.components';
+import CopyIcon from './Icons/CopyIcon.icons';
 
 export {
   GeneralText,
@@ -20,4 +21,5 @@ export {
   ArrowRightIcon,
   DotIcon,
   DynamicModal,
+  CopyIcon,
 };

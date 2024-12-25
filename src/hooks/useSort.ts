@@ -1,6 +1,13 @@
 import {useState, useEffect} from 'react';
-import {Transactions, Transaction} from '../@types'; // Adjust the import path as necessary
+import type {Transactions} from '../@types';
 
+/**
+ * Custom hook for sorting transactions based on a specified sort option.
+ *
+ * @param {Transactions} items - The transactions to be sorted.
+ * @param {string} sortOption - The option to determine the sorting order.
+ * @returns {Transactions} The sorted transactions.
+ */
 const useSort = (items: Transactions, sortOption: string): Transactions => {
   const [sortedItems, setSortedItems] = useState<Transactions>({});
 
@@ -8,11 +15,10 @@ const useSort = (items: Transactions, sortOption: string): Transactions => {
     const sortItems = () => {
       if (!items) return {};
 
-      let sortedArray = Object.entries(items); // Convert Transactions object to an array of entries
+      let sortedArray = Object.entries(items);
 
       switch (sortOption) {
         case 'URUTKAN':
-          // Implement your default sorting logic here if needed
           break;
         case 'A-Z':
           sortedArray.sort(([, a], [, b]) =>
@@ -42,7 +48,6 @@ const useSort = (items: Transactions, sortOption: string): Transactions => {
           break;
       }
 
-      // Convert sorted array back to an object
       const sortedObject = Object.fromEntries(sortedArray);
       setSortedItems(sortedObject);
     };

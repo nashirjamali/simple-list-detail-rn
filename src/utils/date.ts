@@ -1,3 +1,9 @@
+/**
+ * Formats a date string to Indonesian date format (DD Month YYYY).
+ *
+ * @param {string} dateString - The date string to be formatted.
+ * @returns {string} The formatted date in Indonesian format.
+ */
 export const formatDateToIndonesian = (dateString: string): string => {
   const date = new Date(dateString);
 

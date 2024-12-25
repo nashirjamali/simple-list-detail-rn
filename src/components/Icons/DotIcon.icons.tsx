@@ -5,7 +5,8 @@ import Svg, {Path, SvgProps} from 'react-native-svg';
  * DotIcon component renders a dot icon using SVG.
  *
  * @component
- * @returns {Element} The rendered SVG element representing a dot.
+ * @param {SvgProps} props - The properties for the SVG element, including width, height, and fill color.
+ * @returns {JSX.Element} The rendered SVG element representing a dot.
  */
 const DotIcon: FC<SvgProps> = (props: SvgProps): JSX.Element => (
   <Svg width={20} height={20} viewBox="0 0 24 24" fill="none" {...props}>

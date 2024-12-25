@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {StyleSheet, Text, type TextStyle} from 'react-native';
+import {StyleSheet, Text, type TextStyle, type StyleProp} from 'react-native';
 
 import type {GeneralTextProps, GeneralTextVariantsTypes} from '../../@types';
 

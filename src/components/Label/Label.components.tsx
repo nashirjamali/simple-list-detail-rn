@@ -1,10 +1,9 @@
-import React, {type FC, type ReactElement} from 'react';
+import React, {FC, ReactElement} from 'react';
 import {View} from 'react-native';
 
 import type {LabelProps} from '../../@types';
 import GeneralText from '../GeneralText/GeneralText.components';
 import {COLORS, GENERAL_TEXT_VARIANTS, LABEL_VARIANTS} from '../../constants';
-
 import styles from './Label.styles';
 
 /**
@@ -56,7 +55,7 @@ const _mappingVariant = ({text, variant}: LabelProps): ReactElement => {
       return _renderSuccess(text);
 
     default:
-      return <></>;
+      return <></>; // Return an empty fragment for unsupported variants
   }
 };
 

@@ -1,24 +1,24 @@
 import {useState, useEffect} from 'react';
 
-import {Transactions} from '../@types';
+import type {Transactions} from '../@types';
 
 /**
  * Custom hook for searching transactions based on name, bank, or amount.
  *
- * @param {Transactions} transactions - The transactions data to search through.
+ * @param {Transactions | null} transactions - The transactions data to search through.
  * @param {string} searchTerm - The term to search for.
- * @returns {Transactions | null} The filtered transactions.
+ * @returns {Transactions | null} The filtered transactions or null if no transactions are found.
  */
 const useSearchTransactions = (
   transactions: Transactions | null,
   searchTerm: string,
 ): Transactions | null => {
   const [filteredTransactions, setFilteredTransactions] =
-    useState(transactions);
+    useState<Transactions | null>(transactions);
 
   useEffect(() => {
     if (!transactions || Object.keys(transactions).length === 0) {
-      setFilteredTransactions({});
+      setFilteredTransactions(null);
       return;
     }
 

@@ -5,7 +5,7 @@ import Svg, {SvgProps, Path} from 'react-native-svg';
  * ArrowRightIcon component renders a rightward arrow icon using SVG.
  *
  * @component
- * @param {SvgProps} props - The properties for the SVG element.
+ * @param {SvgProps} props - The properties for the SVG element, including width, height, and fill color.
  * @returns {JSX.Element} The rendered SVG element representing a rightward arrow.
  */
 const ArrowRightIcon: FC<SvgProps> = (props: SvgProps): JSX.Element => (

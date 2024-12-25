@@ -12,6 +12,7 @@ export type CardProps = {
   beneficiaryName: string;
   completedAt: string;
   amount: number;
+  onPress: () => void;
 };
 
 export type CardStyles = {
