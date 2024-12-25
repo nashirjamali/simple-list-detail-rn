@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput Component renders correctly with button 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": 10,
+      "display": "flex",
+      "flexDirection": "row",
+      "gap": 5,
+      "justifyContent": "space-between",
+      "paddingBottom": 5,
+      "paddingLeft": 5,
+      "paddingRight": 10,
+      "paddingTop": 5,
+      "width": "100%",
+    }
+  }
+>
+  <TextInput
+    onChangeText={[Function]}
+    placeholder="Enter text"
+    style={{}}
+    value="Sample text"
+  />
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "#FFFFFF",
+        "flexDirection": "row",
+        "gap": 2,
+        "justifyContent": "space-between",
+        "opacity": 1,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#FB6544",
+          "fontSize": 14,
+        }
+      }
+    >
+      Submit
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`TextInput Component renders correctly with placeholder and value 1`] = `
+<View
+  style={
+    {
+      "alignItems": "center",
+      "backgroundColor": "#FFFFFF",
+      "borderRadius": 10,
+      "display": "flex",
+      "flexDirection": "row",
+      "gap": 5,
+      "justifyContent": "space-between",
+      "paddingBottom": 5,
+      "paddingLeft": 5,
+      "paddingRight": 10,
+      "paddingTop": 5,
+      "width": "100%",
+    }
+  }
+>
+  <TextInput
+    onChangeText={[Function]}
+    placeholder="Enter text"
+    style={{}}
+    value="Sample text"
+  />
+</View>
+`;

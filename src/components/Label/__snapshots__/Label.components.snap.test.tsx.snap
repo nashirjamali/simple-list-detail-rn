@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Label Component renders correctly with pending variant 1`] = `
+<View>
+  <View
+    style={
+      {
+        "borderColor": "#FB6544",
+        "borderRadius": 10,
+        "borderWidth": 2,
+        "justifyContent": "center",
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#121212",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      Pending...
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`Label Component renders correctly with success variant 1`] = `
+<View>
+  <View
+    style={
+      {
+        "backgroundColor": "#55B585",
+        "borderRadius": 10,
+        "justifyContent": "center",
+        "padding": 10,
+      }
+    }
+  >
+    <Text
+      style={
+        {
+          "color": "#FFFFFF",
+          "fontSize": 14,
+          "fontWeight": "bold",
+          "textAlign": "center",
+        }
+      }
+    >
+      Success!
+    </Text>
+  </View>
+</View>
+`;

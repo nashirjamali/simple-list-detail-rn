@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GeneralText Component renders correctly with custom style 1`] = `
+<Text
+  style={
+    {
+      "color": "red",
+      "fontSize": 14,
+    }
+  }
+>
+  This is normal text with custom style
+</Text>
+`;
+
+exports[`GeneralText Component renders correctly with header variant 1`] = `
+<Text
+  style={
+    {
+      "color": "#121212",
+      "fontSize": 16,
+      "fontWeight": "bold",
+    }
+  }
+>
+  This is a header text
+</Text>
+`;
+
+exports[`GeneralText Component renders correctly with normal variant 1`] = `
+<Text
+  style={
+    {
+      "color": "#121212",
+      "fontSize": 14,
+    }
+  }
+>
+  This is normal text
+</Text>
+`;

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout Component renders correctly with additional styles 1`] = `
+<RNCSafeAreaView
+  edges={
+    {
+      "bottom": "additive",
+      "left": "additive",
+      "right": "additive",
+      "top": "additive",
+    }
+  }
+  style={
+    {
+      "backgroundColor": "red",
+      "padding": 10,
+    }
+  }
+>
+  <Text>
+    Test Child with Style
+  </Text>
+</RNCSafeAreaView>
+`;
+
+exports[`Layout Component renders correctly with children 1`] = `
+<RNCSafeAreaView
+  edges={
+    {
+      "bottom": "additive",
+      "left": "additive",
+      "right": "additive",
+      "top": "additive",
+    }
+  }
+  style={
+    {
+      "backgroundColor": "#F5F9F8",
+      "padding": 10,
+    }
+  }
+>
+  <Text>
+    Test Child
+  </Text>
+</RNCSafeAreaView>
+`;

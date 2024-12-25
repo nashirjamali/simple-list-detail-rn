@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DynamicModal Component renders correctly when not visible 1`] = `null`;
+
+exports[`DynamicModal Component renders correctly when visible 1`] = `
+<Modal
+  animationType="slide"
+  hardwareAccelerated={false}
+  onRequestClose={[MockFunction]}
+  transparent={true}
+  visible={true}
+>
+  <View
+    accessibilityState={
+      {
+        "busy": undefined,
+        "checked": undefined,
+        "disabled": undefined,
+        "expanded": undefined,
+        "selected": undefined,
+      }
+    }
+    accessibilityValue={
+      {
+        "max": undefined,
+        "min": undefined,
+        "now": undefined,
+        "text": undefined,
+      }
+    }
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onBlur={[Function]}
+    onClick={[Function]}
+    onFocus={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      {
+        "alignItems": "center",
+        "backgroundColor": "rgba(0, 0, 0, 0.5)",
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "backgroundColor": "#FFFFFF",
+          "borderRadius": 10,
+          "padding": 20,
+          "width": "80%",
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "color": "#121212",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Test Modal
+      </Text>
+      <Text
+        style={
+          {
+            "color": "#121212",
+            "fontSize": 14,
+          }
+        }
+      >
+        This is a test modal content.
+      </Text>
+    </View>
+  </View>
+</Modal>
+`;
