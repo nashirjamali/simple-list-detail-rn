@@ -21,7 +21,7 @@ import {formatDateToIndonesian, formatToIDR} from '../../utils';
 
 import styles from './TransactionDetails.styles';
 
-const TransactionContext = createContext<TransactionContextType | undefined>(
+export const TransactionContext = createContext<TransactionContextType | undefined>(
   undefined,
 );
 

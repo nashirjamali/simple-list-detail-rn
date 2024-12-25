@@ -1,0 +1,547 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TransactionDetail Component renders correctly when no transaction is provided 1`] = `
+<RNCSafeAreaView
+  edges={
+    {
+      "bottom": "additive",
+      "left": "additive",
+      "right": "additive",
+      "top": "additive",
+    }
+  }
+  style={
+    {
+      "backgroundColor": "#F5F9F8",
+      "padding": 10,
+    }
+  }
+/>
+`;
+
+exports[`TransactionDetail Component renders correctly with transaction data 1`] = `
+<RNCSafeAreaView
+  edges={
+    {
+      "bottom": "additive",
+      "left": "additive",
+      "right": "additive",
+      "top": "additive",
+    }
+  }
+  style={
+    {
+      "backgroundColor": "#F5F9F8",
+      "padding": 10,
+    }
+  }
+>
+  <View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderBottomColor": "#999999",
+          "borderBottomWidth": 1,
+          "display": "flex",
+          "flexDirection": "row",
+          "gap": 5,
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "color": "#121212",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        ID TRANSAKSI: #
+        12345
+      </Text>
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={false}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
+            "gap": 2,
+            "justifyContent": "space-between",
+            "opacity": 1,
+          }
+        }
+      >
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight={20}
+          bbWidth={20}
+          color="#FB6544"
+          fill="none"
+          focusable={false}
+          height={20}
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          onPress={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          responsible={true}
+          style={
+            [
+              {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              {
+                "flex": 0,
+                "height": 20,
+                "width": 20,
+              },
+            ]
+          }
+          vbHeight={24}
+          vbWidth={24}
+          width={20}
+        >
+          <RNSVGGroup
+            fill={null}
+            propList={
+              [
+                "fill",
+              ]
+            }
+          >
+            <RNSVGPath
+              d="M6 11c0-2.828 0-4.243.879-5.121C7.757 5 9.172 5 12 5h3c2.828 0 4.243 0 5.121.879C21 6.757 21 8.172 21 11v5c0 2.828 0 4.243-.879 5.121C19.243 22 17.828 22 15 22h-3c-2.828 0-4.243 0-5.121-.879C6 20.243 6 18.828 6 16v-5z"
+              fill={
+                {
+                  "payload": 4278190080,
+                  "type": 0,
+                }
+              }
+              propList={
+                [
+                  "stroke",
+                  "strokeWidth",
+                ]
+              }
+              stroke={
+                {
+                  "payload": 4294665540,
+                  "type": 0,
+                }
+              }
+              strokeWidth={1.5}
+            />
+            <RNSVGPath
+              d="M6 19a3 3 0 01-3-3v-6c0-3.771 0-5.657 1.172-6.828C5.343 2 7.229 2 11 2h4a3 3 0 013 3"
+              fill={
+                {
+                  "payload": 4278190080,
+                  "type": 0,
+                }
+              }
+              propList={
+                [
+                  "stroke",
+                  "strokeWidth",
+                ]
+              }
+              stroke={
+                {
+                  "payload": 4294665540,
+                  "type": 0,
+                }
+              }
+              strokeWidth={1.5}
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "alignItems": "center",
+          "backgroundColor": "#FFFFFF",
+          "borderBottomColor": "#999999",
+          "borderBottomWidth": 1,
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "padding": 10,
+        }
+      }
+    >
+      <Text
+        style={
+          {
+            "color": "#121212",
+            "fontSize": 16,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        DETAIL TRANSAKSI
+      </Text>
+      <View
+        accessibilityState={
+          {
+            "busy": undefined,
+            "checked": undefined,
+            "disabled": undefined,
+            "expanded": undefined,
+            "selected": undefined,
+          }
+        }
+        accessibilityValue={
+          {
+            "max": undefined,
+            "min": undefined,
+            "now": undefined,
+            "text": undefined,
+          }
+        }
+        accessible={true}
+        collapsable={false}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          {
+            "alignItems": "center",
+            "backgroundColor": "#FFFFFF",
+            "flexDirection": "row",
+            "gap": 2,
+            "justifyContent": "space-between",
+            "opacity": 1,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#FB6544",
+              "fontSize": 14,
+            }
+          }
+        >
+          Tutup
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        {
+          "display": "flex",
+          "gap": 10,
+          "padding": 10,
+        }
+      }
+    >
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": 5,
+          }
+        }
+      >
+        <Text
+          style={
+            {
+              "color": "#121212",
+              "fontSize": 16,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          BANK A
+        </Text>
+        <RNSVGSvgView
+          align="xMidYMid"
+          bbHeight={20}
+          bbWidth={20}
+          fill="none"
+          focusable={false}
+          height={20}
+          meetOrSlice={0}
+          minX={0}
+          minY={0}
+          style={
+            [
+              {
+                "backgroundColor": "transparent",
+                "borderWidth": 0,
+              },
+              {
+                "flex": 0,
+                "height": 20,
+                "width": 20,
+              },
+            ]
+          }
+          vbHeight={24}
+          vbWidth={24}
+          width={20}
+        >
+          <RNSVGGroup
+            fill={null}
+            propList={
+              [
+                "fill",
+              ]
+            }
+          >
+            <RNSVGPath
+              d="M13.233 16.457a.75.75 0 101.034 1.086l-1.034-1.086zm6.284-3.914a.75.75 0 10-1.034-1.086l1.034 1.086zm-1.034 0a.75.75 0 101.034-1.086l-1.034 1.086zm-4.216-6.086a.75.75 0 10-1.034 1.086l1.034-1.086zM19 12.75a.75.75 0 000-1.5v1.5zm-14-1.5a.75.75 0 000 1.5v-1.5zm9.267 6.293l5.25-5-1.034-1.086-5.25 5 1.034 1.086zm5.25-6.086l-5.25-5-1.034 1.086 5.25 5 1.034-1.086zM19 11.25H5v1.5h14v-1.5z"
+              fill={
+                {
+                  "payload": 4278190080,
+                  "type": 0,
+                }
+              }
+              propList={
+                [
+                  "fill",
+                ]
+              }
+            />
+          </RNSVGGroup>
+        </RNSVGSvgView>
+        <Text
+          style={
+            {
+              "color": "#121212",
+              "fontSize": 16,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          BANK B
+        </Text>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": 5,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 16,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            John Doe
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 14,
+              }
+            }
+          >
+            1234567890
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 16,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            NOMINAL
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 14,
+              }
+            }
+          >
+            Rp1.000.000
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": 5,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 16,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            BERITA TRANSFER
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 14,
+              }
+            }
+          >
+            Payment for services
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 16,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            KODE UNIK
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 14,
+              }
+            }
+          >
+            50
+          </Text>
+        </View>
+      </View>
+      <View
+        style={
+          {
+            "alignItems": "center",
+            "display": "flex",
+            "flexDirection": "row",
+            "gap": 5,
+          }
+        }
+      >
+        <View
+          style={
+            {
+              "flex": 1,
+            }
+          }
+        >
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 16,
+                "fontWeight": "bold",
+              }
+            }
+          >
+            WAKTU DIBUAT
+          </Text>
+          <Text
+            style={
+              {
+                "color": "#121212",
+                "fontSize": 14,
+              }
+            }
+          >
+            1 Januari 2024
+          </Text>
+        </View>
+      </View>
+    </View>
+  </View>
+</RNCSafeAreaView>
+`;
